@@ -1,0 +1,39 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{0B23199A-F049-4755-857E-CF9FBF06318B}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="TriWayTrans_p.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="C:\Users\bamitt21\OneDrive\PAT 2025\Phase 2\TriWayTrans_p.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="TriWayTrans_p">
+			<MSBuild Projects="C:\Users\bamitt21\OneDrive\PAT 2025\Phase 2\TriWayTrans_p.dproj"/>
+		</Target>
+		<Target Name="TriWayTrans_p:Clean">
+			<MSBuild Targets="Clean" Projects="C:\Users\bamitt21\OneDrive\PAT 2025\Phase 2\TriWayTrans_p.dproj"/>
+		</Target>
+		<Target Name="TriWayTrans_p:Make">
+			<MSBuild Targets="Make" Projects="C:\Users\bamitt21\OneDrive\PAT 2025\Phase 2\TriWayTrans_p.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="TriWayTrans_p;TriWayTrans_p"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="TriWayTrans_p:Clean;TriWayTrans_p:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="TriWayTrans_p:Make;TriWayTrans_p:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>
